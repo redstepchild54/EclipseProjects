@@ -1,5 +1,9 @@
 package assignmentA07;
 
+//William McConnell
+//CS 1410
+//Assignment A07
+
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
@@ -15,6 +19,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
+
 import java.awt.GridLayout;
 import javax.swing.JLabel;
 
@@ -23,7 +29,7 @@ import javax.swing.JLabel;
  * interfaces List and Set and that demonstrates the different
  * behaviors of a list and a set.
  * 
- * @authors ..............  and Margret Posch 
+ * @authors William McConnell and Margret Posch 
  *
  */
 public class ListVsSetGui extends JFrame {
@@ -114,6 +120,7 @@ public class ListVsSetGui extends JFrame {
 		
 		// text field
 		textField = new JTextArea();
+		JScrollPane textScroll = new JScrollPane(textField, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		textField.setFont(new Font("Monospaced", Font.PLAIN, 13));
 		textField.setBorder(new EmptyBorder(20, 20, 20, 15));
 		textField.setColumns(10);
@@ -168,6 +175,7 @@ public class ListVsSetGui extends JFrame {
 		mainDifferencePanel.setLayout(new BorderLayout(0, 0));
 		
 		JTextArea txtrTheMain = new JTextArea();
+		JScrollPane theMainScroll = new JScrollPane(txtrTheMain, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
 		txtrTheMain.setEditable(false);
 		txtrTheMain.setText("The 2 main differences between interface List and Set are:"
 				+ "\n\nLists can contain duplicates and can be accessed by index"
@@ -176,8 +184,7 @@ public class ListVsSetGui extends JFrame {
 		txtrTheMain.setFont(new Font("Arial", Font.PLAIN, 20));
 		txtrTheMain.setBackground(new Color(141, 141, 131));
 		txtrTheMain.setForeground(Color.WHITE);
-		txtrTheMain.setLineWrap(true);
-		mainDifferencePanel.add(txtrTheMain);
+		mainDifferencePanel.add(theMainScroll);
 		
 		return mainDifferencePanel;
 	}

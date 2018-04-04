@@ -25,6 +25,7 @@ import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.AbstractButton;
 import javax.swing.JTextField;
+import java.awt.Dimension;
 
 public class DemoWrapperClassGui extends JFrame {
 
@@ -36,7 +37,7 @@ public class DemoWrapperClassGui extends JFrame {
     private JMenuItem mntnExit;
 
     private JPanel charControlPanel;
-    private JButton btnCharSubmit;
+    private JTextField txtfldCharSubmit;
     private JTextArea charLabel;
 
     private JPanel numberControlPanel;
@@ -129,6 +130,7 @@ public class DemoWrapperClassGui extends JFrame {
 
     private void createCharLabel() {
         charLabel = new JTextArea("Char");
+        charLabel.setMargin(new Insets(30, 30, 30, 30));
         charLabel.setForeground(new Color(255, 255, 255));
         charLabel.setOpaque(true);
         charLabel.setBackground(new Color(220, 20, 60));
@@ -137,18 +139,21 @@ public class DemoWrapperClassGui extends JFrame {
 
     private void createCharControlPanel() {
         charControlPanel = new JPanel();
+        charControlPanel.setPreferredSize(new Dimension(150, 10));
         charControlPanel.setBackground(SystemColor.controlHighlight);
         charControlPanel.setBorder(new EmptyBorder(15, 15, 15, 15));
         charControlPanel.setLayout(new GridLayout(7, 1, 0, 0));
 
-        btnCharSubmit = new JButton("Submit");
-        btnCharSubmit.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                charLabel.setBackground(Color.BLUE);
-            }
+        txtfldCharSubmit = new JTextField("Submit");
+        txtfldCharSubmit.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent arg0) {
+        		
+        		DemoWrapperClass dwc = new DemoWrapperClass();
+        		charLabel.setText(dwc.charProperties(txtfldCharSubmit.getText().charAt(0)));
+        		
+        	}
         });
-        charControlPanel.add(btnCharSubmit);
+        charControlPanel.add(txtfldCharSubmit);
     }
 
     private void createMenu() {

@@ -1,5 +1,9 @@
 package assignmentA07;
 
+//William McConnell
+//CS 1410
+//Assignment A07
+
 import java.awt.Color;
 
 /**
