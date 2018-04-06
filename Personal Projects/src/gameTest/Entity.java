@@ -1,6 +1,8 @@
 package gameTest;
 
 import java.util.HashSet;
+import java.util.Hashtable;
+
 import gameTest.EntityTemplate.ComponentTemplate;
 
 public class Entity
@@ -37,6 +39,7 @@ public class Entity
 //	}
 	
 	private HashSet<Component> components = new HashSet<>();
+	public Hashtable <Class, Component> componentKeys = new Hashtable<>();
 	
 	public Entity(EntityTemplate template)
 	{
@@ -54,5 +57,11 @@ public class Entity
 				
 			}
 		}
+		
+		for(Component el: components)
+		{
+			componentKeys.put(el.getClass(), el);
+		}
+		
 	}
 }

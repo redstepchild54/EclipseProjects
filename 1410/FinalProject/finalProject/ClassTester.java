@@ -6,7 +6,7 @@ public class ClassTester {
 		
 		Properties properties = new Properties(PClass.ROGUE);
 		
-		
+		ComponentTemplate ct = new ComponentTemplatePlayerCharacter();
 		
 		System.out.println(PClass.ROGUE);
 		System.out.println(properties.attributes.toString());
