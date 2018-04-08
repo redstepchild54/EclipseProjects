@@ -17,18 +17,25 @@ public class EntityFactory {
 	{
 		entityTemplates.clear();
 		
+		
 		ComponentTemplatePlayerCharacter playerCharacter = new ComponentTemplatePlayerCharacter();
 		
 		EntityTemplate playerCharacterDwarf = new EntityTemplate();
+		ComponentTemplateRaceDwarf raceDwarf = new ComponentTemplateRaceDwarf();
 		playerCharacterDwarf.componentTemplates.add(playerCharacter);
+		playerCharacterDwarf.componentTemplates.add(raceDwarf);
 		entityTemplates.put(EntityTemplateName.PLAYERCHARACTERDWARF, playerCharacterDwarf);
 		
 		EntityTemplate playerCharacterElf = new EntityTemplate();
+		ComponentTemplateRaceElf raceElf = new ComponentTemplateRaceElf();
 		playerCharacterElf.componentTemplates.add(playerCharacter);
-		entityTemplates.put(EntityTemplateName.PLAYERCHARACTERDWARFELF, playerCharacterElf);
+		playerCharacterElf.componentTemplates.add(raceElf);
+		entityTemplates.put(EntityTemplateName.PLAYERCHARACTERELF, playerCharacterElf);
 		
 		EntityTemplate playerCharacterHuman = new EntityTemplate();
+		ComponentTemplateRaceHuman raceHuman = new ComponentTemplateRaceHuman();
 		playerCharacterHuman.componentTemplates.add(playerCharacter);
+		playerCharacterHuman.componentTemplates.add(raceHuman);
 		entityTemplates.put(EntityTemplateName.PLAYERCHARACTERHUMAN, playerCharacterHuman);
 	}
 	

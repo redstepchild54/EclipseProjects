@@ -11,12 +11,15 @@ public class ClassTester {
 		List<Entity> entities = new ArrayList<>();
 		Component cp;
 		
-		entities.add(ef.produceEntity(EntityTemplateName.PLAYERCHARACTERHUMAN, PClass.FIGHTER));
+		entities.add(ef.produceEntity(EntityTemplateName.PLAYERCHARACTERDWARF, PClass.FIGHTER));
 		entities.add(ef.produceEntity(EntityTemplateName.PLAYERCHARACTERHUMAN, PClass.ROGUE));
-		entities.add(ef.produceEntity(EntityTemplateName.PLAYERCHARACTERHUMAN, PClass.WIZARD));
+		entities.add(ef.produceEntity(EntityTemplateName.PLAYERCHARACTERELF, PClass.WIZARD));
 		
 		for(Entity el: entities)
 		{
+			cp = el.components.get(ComponentRace.class);
+			System.out.println(((ComponentRace)cp).toString());
+			
 			cp = el.components.get(ComponentClass.class);
 			System.out.println(((ComponentClass)cp).toString());
 			System.out.println();
@@ -25,13 +28,26 @@ public class ClassTester {
 			System.out.println(((ComponentAttributes)cp).toString());
 			System.out.println();
 			
+			cp = el.components.get(ComponentSavingThrows.class);
+			System.out.println(((ComponentSavingThrows)cp).toString());
+			System.out.println();
+			
 			cp = el.components.get(ComponentBody.class);
 			System.out.println(((ComponentBody)cp).toString());
 			System.out.println();
 			
-			cp = el.components.get(ComponentSavingThrows.class);
-			System.out.println(((ComponentSavingThrows)cp).toString());
+			cp = el.components.get(ComponentSize.class);
+			System.out.println(((ComponentSize)cp).toString());
 			System.out.println();
+			
+			cp = el.components.get(ComponentLevel.class);
+			System.out.println(((ComponentLevel)cp).toString());
+			
+			cp = el.components.get(ComponentXP.class);
+			System.out.println(((ComponentXP)cp).toString());
+			System.out.println();
+			
+			System.out.println("-------------------------------------");
 			System.out.println();
 		}
 	}

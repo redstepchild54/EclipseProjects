@@ -40,9 +40,9 @@ public class ComponentSavingThrows extends Component{
 	}
 	private void adjustSavingThrow(ComponentAttributes componentAttributes)
 	{
-		fortitude += componentAttributes.constitution.getAttributeMod();
-		reflex += componentAttributes.dexterity.getAttributeMod();
-		will += componentAttributes.wisdom.getAttributeMod();
+		fortitude += componentAttributes.getConstitution().getAttributeMod();
+		reflex += componentAttributes.getDexterity().getAttributeMod();
+		will += componentAttributes.getWisdom().getAttributeMod();
 	}
 
 	@Override

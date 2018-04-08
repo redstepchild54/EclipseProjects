@@ -2,6 +2,6 @@ package finalProject;
 
 public enum ComponentTemplateName {
 	
-	PLAYERCHARACTER
+	PLAYERCHARACTER, RACEDWARF, RACEELF, RACEHUMAN
 
 }

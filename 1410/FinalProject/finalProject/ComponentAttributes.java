@@ -5,12 +5,12 @@ import java.util.Random;
 
 public class ComponentAttributes extends Component{
 	
-	Attribute strength;
-	Attribute dexterity;
-	Attribute constitution;
-	Attribute intelligence;
-	Attribute wisdom;
-	Attribute charisma;
+	private Attribute strength;
+	private Attribute dexterity;
+	private Attribute constitution;
+	private Attribute intelligence;
+	private Attribute wisdom;
+	private Attribute charisma;
 	
 	private int[] attributeArray = new int[6];
 	private int pointBuy;
@@ -22,7 +22,7 @@ public class ComponentAttributes extends Component{
 		do
 		{
 			pointBuy = 0;
-			pointBuy = setAttributes();
+			pointBuy = setAttributeArray();
 		}
 		while (pointBuy < POINTBUYVAL);
 		
@@ -39,7 +39,7 @@ public class ComponentAttributes extends Component{
 								wisdom.getAttribute(), wisdom.getAttributeMod(), charisma.getAttribute(), charisma.getAttributeMod());
 	}
 
-	private int setAttributes()
+	private int setAttributeArray()
 	{
 		Random rnd = new Random();
 		for (int i = 0; i < 6; i++)
@@ -122,4 +122,55 @@ public class ComponentAttributes extends Component{
 			break;
 		}
 	}
+
+	public Attribute getStrength() {
+		return strength;
+	}
+
+	public void setStrength(Attribute strength) {
+		this.strength = strength;
+	}
+
+	public Attribute getDexterity() {
+		return dexterity;
+	}
+
+	public void setDexterity(Attribute dexterity) {
+		this.dexterity = dexterity;
+	}
+
+	public Attribute getConstitution() {
+		return constitution;
+	}
+
+	public void setConstitution(Attribute constitution) {
+		this.constitution = constitution;
+	}
+
+	public Attribute getIntelligence() {
+		return intelligence;
+	}
+
+	public void setIntelligence(Attribute intelligence) {
+		this.intelligence = intelligence;
+	}
+
+	public Attribute getWisdom() {
+		return wisdom;
+	}
+
+	public void setWisdom(Attribute wisdom) {
+		this.wisdom = wisdom;
+	}
+
+	public Attribute getCharisma() {
+		return charisma;
+	}
+
+	public void setCharisma(Attribute charisma) {
+		this.charisma = charisma;
+	}
+	
+	
+	
 }

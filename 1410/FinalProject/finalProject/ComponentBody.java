@@ -21,20 +21,20 @@ public class ComponentBody extends Component{
 	{
 		switch (pClass) {
 		case FIGHTER:
-			health = 10 + componentAttributes.constitution.getAttributeMod();
-			maxHealth = 10 + componentAttributes.constitution.getAttributeMod();
+			health = 10 + componentAttributes.getConstitution().getAttributeMod();
+			maxHealth = 10 + componentAttributes.getConstitution().getAttributeMod();
 			break;
 		case ROGUE:
-			health = 8 + componentAttributes.constitution.getAttributeMod();
-			maxHealth = 8 + componentAttributes.constitution.getAttributeMod();
+			health = 8 + componentAttributes.getConstitution().getAttributeMod();
+			maxHealth = 8 + componentAttributes.getConstitution().getAttributeMod();
 			break;
 		case WIZARD:
-			health = 6 + componentAttributes.constitution.getAttributeMod();
-			maxHealth = 6 + componentAttributes.constitution.getAttributeMod();
+			health = 6 + componentAttributes.getConstitution().getAttributeMod();
+			maxHealth = 6 + componentAttributes.getConstitution().getAttributeMod();
 			break;
 		default:
-			health = 8 + componentAttributes.constitution.getAttributeMod();
-			maxHealth = 8 + componentAttributes.constitution.getAttributeMod();
+			health = 8 + componentAttributes.getConstitution().getAttributeMod();
+			maxHealth = 8 + componentAttributes.getConstitution().getAttributeMod();
 			break;
 		}
 	}
@@ -43,24 +43,12 @@ public class ComponentBody extends Component{
 	{
 		switch (pClass) {
 		case FIGHTER:
-			ac = 10 + componentAttributes.dexterity.getAttributeMod();
-			acFlatFooted = 10;
-			acTouch = 10 + componentAttributes.dexterity.getAttributeMod();
-			break;
 		case ROGUE:
-			ac = 10 + componentAttributes.dexterity.getAttributeMod();
-			acFlatFooted = 10;
-			acTouch = 10 + componentAttributes.dexterity.getAttributeMod();
-			break;
 		case WIZARD:
-			ac = 10 + componentAttributes.dexterity.getAttributeMod();
-			acFlatFooted = 10;
-			acTouch = 10 + componentAttributes.dexterity.getAttributeMod();
-			break;
 		default:
-			ac = 10 + componentAttributes.dexterity.getAttributeMod();
+			ac = 10 + componentAttributes.getDexterity().getAttributeMod();
 			acFlatFooted = 10;
-			acTouch = 10 + componentAttributes.dexterity.getAttributeMod();
+			acTouch = 10 + componentAttributes.getDexterity().getAttributeMod();
 			break;
 		}
 	}
@@ -69,16 +57,10 @@ public class ComponentBody extends Component{
 	{
 		switch (pClass) {
 		case FIGHTER:
-			initiative = componentAttributes.dexterity.getAttributeMod();
-			break;
 		case ROGUE:
-			initiative = componentAttributes.dexterity.getAttributeMod();
-			break;
 		case WIZARD:
-			initiative = componentAttributes.dexterity.getAttributeMod();
-			break;
 		default:
-			initiative = componentAttributes.dexterity.getAttributeMod();
+			initiative = componentAttributes.getDexterity().getAttributeMod();
 			break;
 		}
 	}
