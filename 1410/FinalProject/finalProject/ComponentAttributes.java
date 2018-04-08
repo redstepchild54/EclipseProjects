@@ -3,7 +3,7 @@ package finalProject;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Attributes {
+public class ComponentAttributes extends Component{
 	
 	Attribute strength;
 	Attribute dexterity;
@@ -16,8 +16,9 @@ public class Attributes {
 	private int pointBuy;
 	private final int POINTBUYVAL = 15;
 	
-	public Attributes(PClass pClass)
+	public ComponentAttributes(ComponentTemplate componentTemplate, PClass pClass)
 	{
+		super(componentTemplate);
 		do
 		{
 			pointBuy = 0;

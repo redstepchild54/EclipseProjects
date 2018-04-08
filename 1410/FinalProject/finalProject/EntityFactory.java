@@ -17,10 +17,19 @@ public class EntityFactory {
 	{
 		entityTemplates.clear();
 		
-		EntityTemplate playerCharacterDwarf = new EntityTemplate();
 		ComponentTemplatePlayerCharacter playerCharacter = new ComponentTemplatePlayerCharacter();
+		
+		EntityTemplate playerCharacterDwarf = new EntityTemplate();
 		playerCharacterDwarf.componentTemplates.add(playerCharacter);
 		entityTemplates.put(EntityTemplateName.PLAYERCHARACTERDWARF, playerCharacterDwarf);
+		
+		EntityTemplate playerCharacterElf = new EntityTemplate();
+		playerCharacterElf.componentTemplates.add(playerCharacter);
+		entityTemplates.put(EntityTemplateName.PLAYERCHARACTERDWARFELF, playerCharacterElf);
+		
+		EntityTemplate playerCharacterHuman = new EntityTemplate();
+		playerCharacterHuman.componentTemplates.add(playerCharacter);
+		entityTemplates.put(EntityTemplateName.PLAYERCHARACTERHUMAN, playerCharacterHuman);
 	}
 	
 	public Entity produceEntity(EntityTemplateName key)
@@ -33,12 +42,21 @@ public class EntityFactory {
 			return entity;
 		}
 		else
-			System.err.println("There are no current EntityTemplates stored by the name:" + key);
+			System.err.println("There are no current EntityTemplates stored by the name: " + key);
 		return null;
 	}
 	
 	public Entity produceEntity(EntityTemplateName key, PClass pClass)
 	{
+		
+		if (entityTemplates.containsKey(key))
+		{
+			EntityTemplate template = entityTemplates.get(key);
+			Entity entity = new Entity(template, pClass);
+			return entity;
+		}
+		else
+			System.err.println("There are no current EntityTemplates stored by the name: " + key);
 		return null;
 	}
 	

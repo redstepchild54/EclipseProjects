@@ -1,13 +1,14 @@
 package finalProject;
 
-public class SavingThrow {
+public class ComponentSavingThrows extends Component{
 	
 	private int fortitude;
 	private int reflex;
 	private int will;
 	
-	public SavingThrow(PClass pClass, Attributes attribute)
+	public ComponentSavingThrows(ComponentTemplate componentTemplate, PClass pClass, ComponentAttributes attribute)
 	{
+		super(componentTemplate);
 		setBaseSavingThrow(pClass);
 		adjustSavingThrow(attribute);
 	}
@@ -37,11 +38,11 @@ public class SavingThrow {
 			break;
 		}
 	}
-	private void adjustSavingThrow(Attributes attributes)
+	private void adjustSavingThrow(ComponentAttributes componentAttributes)
 	{
-		fortitude += attributes.constitution.getAttributeMod();
-		reflex += attributes.dexterity.getAttributeMod();
-		will += attributes.wisdom.getAttributeMod();
+		fortitude += componentAttributes.constitution.getAttributeMod();
+		reflex += componentAttributes.dexterity.getAttributeMod();
+		will += componentAttributes.wisdom.getAttributeMod();
 	}
 
 	@Override

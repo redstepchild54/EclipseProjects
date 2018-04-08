@@ -14,6 +14,8 @@ public class Test {
 		entityFactory.ProduceEntity("Robin");
 		Component cpt = ent.componentKeys.get(CapeColor.class);
 		System.out.println(((CapeColor) cpt).capeColorTemplate.str);
+		
+		
 	}
 
 }
