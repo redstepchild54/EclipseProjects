@@ -28,7 +28,7 @@ public class Entity {
 			case PLAYERCHARACTER:
 				ComponentAttributes attributes = new ComponentAttributes(el, pClass);
 				ComponentBody body = new ComponentBody(el, pClass, attributes);
-				ComponentClass cClass = new ComponentClass(el, pClass);
+				ComponentPClass cClass = new ComponentPClass(el, pClass);
 				ComponentSavingThrows savingThrows = new ComponentSavingThrows(el, pClass, attributes);
 				ComponentLevel level = new ComponentLevel(el, 1);
 				ComponentXP xp = new ComponentXP(el, 0);

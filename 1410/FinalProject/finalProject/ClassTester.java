@@ -20,8 +20,8 @@ public class ClassTester {
 			cp = el.components.get(ComponentRace.class);
 			System.out.println(((ComponentRace)cp).toString());
 			
-			cp = el.components.get(ComponentClass.class);
-			System.out.println(((ComponentClass)cp).toString());
+			cp = el.components.get(ComponentPClass.class);
+			System.out.println(((ComponentPClass)cp).toString());
 			System.out.println();
 			
 			cp = el.components.get(ComponentAttributes.class);

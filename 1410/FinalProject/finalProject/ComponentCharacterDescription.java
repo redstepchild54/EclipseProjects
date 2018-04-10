@@ -2,7 +2,7 @@ package finalProject;
 
 import java.awt.Color;
 
-public class CharacterInfo {
+public class ComponentCharacterDescription {
 
 	private String characterName;
 	private String playerName;
@@ -15,7 +15,7 @@ public class CharacterInfo {
 	private Color eyes;
 	private int xp;
 	
-	public CharacterInfo(PClass pClass)
+	public ComponentCharacterDescription(PClass pClass)
 	{
 		
 	}

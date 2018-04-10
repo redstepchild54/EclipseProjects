@@ -2,7 +2,7 @@ package finalProject;
 
 public class ComponentSize extends Component {
 
-	Size size;
+	private Size size;
 	
 	public ComponentSize(ComponentTemplate componentTempate, Size size) {
 		super(componentTempate);

@@ -2,7 +2,7 @@ package finalProject;
 
 public class ComponentXP extends Component {
 
-	int xp;
+	private int xp;
 	
 	public ComponentXP(ComponentTemplate componentTempate, int xp) {
 		super(componentTempate);
