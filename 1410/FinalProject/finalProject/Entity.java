@@ -19,6 +19,12 @@ public class Entity {
 		initialize(template, pClass);
 	}
 
+	public Component getComponent(Class key	)
+	{
+		return components.get(key);
+	}
+	
+	
 	private void initialize(EntityTemplate template, PClass pClass) {
 		myTemplate = template;
 		for (ComponentTemplate el: template.componentTemplates)

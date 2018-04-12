@@ -17,33 +17,33 @@ public class ClassTester {
 		
 		for(Entity el: entities)
 		{
-			cp = el.components.get(ComponentRace.class);
+			cp = el.getComponent(ComponentRace.class);
 			System.out.println(((ComponentRace)cp).toString());
 			
-			cp = el.components.get(ComponentPClass.class);
+			cp = el.getComponent(ComponentPClass.class);
 			System.out.println(((ComponentPClass)cp).toString());
 			System.out.println();
 			
-			cp = el.components.get(ComponentAttributes.class);
+			cp = el.getComponent(ComponentAttributes.class);
 			System.out.println(((ComponentAttributes)cp).toString());
 			System.out.println();
 			
-			cp = el.components.get(ComponentSavingThrows.class);
+			cp = el.getComponent(ComponentSavingThrows.class);
 			System.out.println(((ComponentSavingThrows)cp).toString());
 			System.out.println();
 			
-			cp = el.components.get(ComponentBody.class);
+			cp = el.getComponent(ComponentBody.class);
 			System.out.println(((ComponentBody)cp).toString());
 			System.out.println();
 			
-			cp = el.components.get(ComponentSize.class);
+			cp = el.getComponent(ComponentSize.class);
 			System.out.println(((ComponentSize)cp).toString());
 			System.out.println();
 			
-			cp = el.components.get(ComponentLevel.class);
+			cp = el.getComponent(ComponentLevel.class);
 			System.out.println(((ComponentLevel)cp).toString());
 			
-			cp = el.components.get(ComponentXP.class);
+			cp = el.getComponent(ComponentXP.class);
 			System.out.println(((ComponentXP)cp).toString());
 			System.out.println();
 			
