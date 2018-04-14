@@ -14,13 +14,20 @@ public class ComponentCharacterDescription extends Component{
 	private Color hair;
 	private Color eyes;
 	private Gender gender;
+	private Race race;
 	DieRoller dieRoller = new DieRoller();
 	
 	public ComponentCharacterDescription(ComponentTemplate componentTemplate, PClass pClass, Race race)
 	{
 		super(componentTemplate);
+		this.race = race;
 		initializeAge(pClass, race);
+		gender = Gender.MALE;
 		initializeHeightandWeight(race, gender);
+		characterName = "Character";
+		playerName = "Player";
+		hair = Color.BLACK;
+		eyes = Color.BLUE;
 	}
 
 	private void initializeAge(PClass pClass, Race race)
@@ -106,6 +113,8 @@ public class ComponentCharacterDescription extends Component{
 				weight = 120;
 				break;
 			default:
+				height = new Height(3, 9);
+				weight = 150;
 				break;
 			}
 			
@@ -129,6 +138,9 @@ public class ComponentCharacterDescription extends Component{
 				hwModifier = dieRoller.dieRoll(2, 6);
 				break;
 			default:
+				height = new Height(5, 4);
+				weight = 100;
+				hwModifier = dieRoller.dieRoll(2, 8);
 				break;
 			}
 			
@@ -140,17 +152,100 @@ public class ComponentCharacterDescription extends Component{
 			switch(gender)
 			{
 			case MALE:
+				height = new Height(4,10);
+				weight = 120;
 				break;
 			case FEMALE:
+				height = new Height(4,5);
+				weight = 85;
 				break;
 			default:
+				height = new Height(4,10);
+				weight = 120;
 				break;
 			}
 			
+			hwModifier = dieRoller.dieRoll(2, 10);
+			height.setHeight(height.getHeightinInches() + hwModifier);
+			weight+= hwModifier * 5;
 			
 		default:
 			break;
 		}
 		
 	}
+
+	
+	public String getCharacterName() {
+		return characterName;
+	}
+
+	public void setCharacterName(String characterName) {
+		this.characterName = characterName;
+	}
+
+	public String getPlayerName() {
+		return playerName;
+	}
+
+	public void setPlayerName(String playerName) {
+		this.playerName = playerName;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public Height getHeight() {
+		return height;
+	}
+
+	public void setHeight(Height height) {
+		this.height = height;
+	}
+
+	public int getWeight() {
+		return weight;
+	}
+
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+
+	public Color getHair() {
+		return hair;
+	}
+
+	public void setHair(Color hair) {
+		this.hair = hair;
+	}
+
+	public Color getEyes() {
+		return eyes;
+	}
+
+	public void setEyes(Color eyes) {
+		this.eyes = eyes;
+	}
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+		initializeHeightandWeight(race, gender);
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Character Name: %s%nPlayer Name: %s%nGender: %s%nAge: %s%nHeight: %sft %sin%nWieght: %s%nHair Color: %s%nEye Color: %s%n", 
+							  characterName, playerName, gender, age, height.getFeet(), height.getInches(), weight, hair.toString(), eyes.toString());
+	}
+
+	
 }

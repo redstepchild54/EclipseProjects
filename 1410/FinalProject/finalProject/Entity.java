@@ -39,6 +39,8 @@ public class Entity {
 				ComponentLevel level = new ComponentLevel(el, 1);
 				ComponentXP xp = new ComponentXP(el, 0);
 				
+				ComponentCharacterDescription characterDescription = null;
+				
 				ComponentRace race = null;
 				ComponentSize size = null;
 				
@@ -47,21 +49,23 @@ public class Entity {
 					switch (raceEl.getComponentTemplateName())
 					{
 					case RACEDWARF:
-						race = new ComponentRace(raceEl, Race.DWARF, attributes);
+						race = new ComponentRace(raceEl, Race.DWARF, pClass, attributes);
 						size = new ComponentSize(raceEl, Size.MEDIUM);
 						break;
 					case RACEELF:
-						race = new ComponentRace(raceEl, Race.ELF, attributes);
+						race = new ComponentRace(raceEl, Race.ELF, pClass, attributes);
 						size = new ComponentSize(raceEl, Size.MEDIUM);
 						break;
 					case RACEHUMAN:
-						race = new ComponentRace(raceEl, Race.HUMAN, attributes);
+						race = new ComponentRace(raceEl, Race.HUMAN, pClass, attributes);
 						size = new ComponentSize(raceEl, Size.MEDIUM);
 						break;
 					default:
 						break;
 					}
 				}
+				
+				characterDescription = new ComponentCharacterDescription(el, pClass, race.getRace());
 				
 				componentSet.add(attributes);
 				componentSet.add(body);
@@ -71,6 +75,7 @@ public class Entity {
 				componentSet.add(level);
 				componentSet.add(xp);
 				componentSet.add(size);
+				componentSet.add(characterDescription);
 			default:
 				break;
 			}
