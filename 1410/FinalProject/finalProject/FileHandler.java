@@ -1,30 +1,39 @@
 package finalProject;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
 public class FileHandler {
 	
-	private Entity entity;
-	private String outputFilename;
-	private String inputFilename;
-	
-	public FileHandler(Entity entity, String outputFilename, String inputFilename)
-	{
-		this.entity = entity;
-		this.outputFilename = outputFilename;
-		this.inputFilename = inputFilename;
+	public FileHandler() {
 	}
 
-	public void writeToFile()
+	public void writeToFile(Entity entity, String outputFilename)
 	{
 		try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(outputFilename));)
 		{
-			
+			out.writeObject(entity);
+			System.out.println("Serialization to file complete.");
 		}
 		catch(Exception e)
 		{
-			
+			System.out.println(e.getMessage());
 		}
+	}
+	
+	public Entity readFromFile(String inputFileName)
+	{
+		
+		try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(inputFileName));)
+		{
+			return (Entity) in.readObject();
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		return null;
 	}
 }

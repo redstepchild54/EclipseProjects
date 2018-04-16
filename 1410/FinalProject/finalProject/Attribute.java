@@ -1,6 +1,8 @@
 package finalProject;
 
-public class Attribute {
+import java.io.Serializable;
+
+public class Attribute implements Serializable{
 	
 	private int attribute;
 	private int attributeMod;

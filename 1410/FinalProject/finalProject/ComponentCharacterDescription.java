@@ -15,7 +15,8 @@ public class ComponentCharacterDescription extends Component{
 	private Color eyes;
 	private Gender gender;
 	private Race race;
-	DieRoller dieRoller = new DieRoller();
+	private DieRoller dieRoller = new DieRoller();
+	private ColorName colorName = new ColorName();
 	
 	public ComponentCharacterDescription(ComponentTemplate componentTemplate, PClass pClass, Race race)
 	{
@@ -244,7 +245,7 @@ public class ComponentCharacterDescription extends Component{
 	@Override
 	public String toString() {
 		return String.format("Character Name: %s%nPlayer Name: %s%nGender: %s%nAge: %s%nHeight: %sft %sin%nWieght: %s%nHair Color: %s%nEye Color: %s%n", 
-							  characterName, playerName, gender, age, height.getFeet(), height.getInches(), weight, hair.toString(), eyes.toString());
+							  characterName, playerName, gender, age, height.getFeet(), height.getInches(), weight, colorName.getColorName(hair), colorName.getColorName(eyes));
 	}
 
 	

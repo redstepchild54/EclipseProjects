@@ -1,6 +1,8 @@
 package finalProject;
 
-public class Height {
+import java.io.Serializable;
+
+public class Height implements Serializable{
 	
 	private int feet;
 	private int inches;

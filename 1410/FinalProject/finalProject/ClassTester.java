@@ -11,6 +11,7 @@ public class ClassTester {
 		EntityFactory ef = new EntityFactory();
 		List<Entity> entities = new ArrayList<>();
 		Component cp;
+		FileHandler fileHandler = new FileHandler();
 		
 		entities.add(ef.produceEntity(EntityTemplateName.PLAYERCHARACTERDWARF, PClass.FIGHTER));
 		entities.add(ef.produceEntity(EntityTemplateName.PLAYERCHARACTERHUMAN, PClass.ROGUE));
@@ -22,6 +23,23 @@ public class ClassTester {
 		((ComponentCharacterDescription)cp).setGender(Gender.MALE);
 		((ComponentCharacterDescription)cp).setHair(Color.RED);
 		((ComponentCharacterDescription)cp).setEyes(Color.GREEN);
+		
+		cp = entities.get(1).getComponent(ComponentCharacterDescription.class);
+		((ComponentCharacterDescription)cp).setCharacterName("Dominique");
+		((ComponentCharacterDescription)cp).setPlayerName("Bill");
+		((ComponentCharacterDescription)cp).setGender(Gender.MALE);
+		((ComponentCharacterDescription)cp).setHair(Color.YELLOW);
+		((ComponentCharacterDescription)cp).setEyes(Color.BLACK);
+		
+		cp = entities.get(1).getComponent(ComponentCharacterDescription.class);
+		((ComponentCharacterDescription)cp).setCharacterName("Vaeri");
+		((ComponentCharacterDescription)cp).setPlayerName("Caroline");
+		((ComponentCharacterDescription)cp).setGender(Gender.FEMALE);
+		((ComponentCharacterDescription)cp).setHair(Color.WHITE);
+		((ComponentCharacterDescription)cp).setEyes(Color.BLUE);
+		
+		fileHandler.writeToFile(entities.get(0), "FinalProject/finalProject/Entity.ser");
+		entities.add(fileHandler.readFromFile("FinalProject/finalProject/Entity.ser"));
 		
 		for(Entity el: entities)
 		{
@@ -55,9 +73,9 @@ public class ClassTester {
 			System.out.println(((ComponentXP)cp).toString());
 			System.out.println();
 			
-//			cp = el.getComponent(ComponentCharacterDescription.class);
-//			System.out.println(((ComponentCharacterDescription)cp).toString());
-//			System.out.println();
+			cp = el.getComponent(ComponentCharacterDescription.class);
+			System.out.println(((ComponentCharacterDescription)cp).toString());
+			System.out.println();
 			
 			System.out.println("-------------------------------------");
 			System.out.println();

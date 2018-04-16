@@ -1,6 +1,8 @@
 package finalProject;
 
-public class Component {
+import java.io.Serializable;
+
+public class Component implements Serializable{
 	
 	protected ComponentTemplate componentTemplate;
 	

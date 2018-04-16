@@ -1,8 +1,9 @@
 package finalProject;
 
+import java.io.Serializable;
 import java.util.HashSet;
 
-public class EntityTemplate
+public class EntityTemplate implements Serializable
 {
 	
 	public EntityTemplate()

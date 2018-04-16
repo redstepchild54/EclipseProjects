@@ -1,9 +1,10 @@
 package finalProject;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Hashtable;
 
-public class Entity {
+public class Entity implements Serializable{
 
 	private EntityTemplate myTemplate= null;
 	private HashSet<Component> componentSet = new HashSet<>();

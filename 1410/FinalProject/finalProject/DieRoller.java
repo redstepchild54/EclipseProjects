@@ -1,8 +1,9 @@
 package finalProject;
 
+import java.io.Serializable;
 import java.util.Random;
 
-public class DieRoller {
+public class DieRoller implements Serializable{
 	
 	public DieRoller() {
 		
