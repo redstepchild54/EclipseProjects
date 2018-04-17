@@ -8,7 +8,14 @@ public class Attribute implements Serializable{
 	private int attributeMod;
 	
 	public Attribute(int attribute) {
-		this.attribute = attribute;
+		
+		if (attribute < 0)
+		{
+			this.attribute = 0;
+			throw new IllegalArgumentException("Value must be positive");
+		}
+		else
+			this.attribute = attribute;
 		attributeMod = attribute/ 2 - 5;
 	}
 

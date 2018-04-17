@@ -34,9 +34,7 @@ public class Entity implements Serializable{
 			{
 			case PLAYERCHARACTER:
 				ComponentAttributes attributes = new ComponentAttributes(el, pClass);
-				ComponentBody body = new ComponentBody(el, pClass, attributes);
 				ComponentPClass cClass = new ComponentPClass(el, pClass);
-				ComponentSavingThrows savingThrows = new ComponentSavingThrows(el, pClass, attributes);
 				ComponentLevel level = new ComponentLevel(el, 1);
 				ComponentXP xp = new ComponentXP(el, 0);
 				
@@ -67,6 +65,8 @@ public class Entity implements Serializable{
 				}
 				
 				characterDescription = new ComponentCharacterDescription(el, pClass, race.getRace());
+				ComponentBody body = new ComponentBody(el, pClass, attributes);
+				ComponentSavingThrows savingThrows = new ComponentSavingThrows(el, pClass, attributes);
 				
 				componentSet.add(attributes);
 				componentSet.add(body);

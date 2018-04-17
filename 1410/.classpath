@@ -9,6 +9,7 @@
 	<classpathentry kind="src" path="Labs"/>
 	<classpathentry kind="src" path="Midterm"/>
 	<classpathentry kind="src" path="FrequencyQuizzes"/>
+	<classpathentry kind="src" path="FinalProjectTests"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

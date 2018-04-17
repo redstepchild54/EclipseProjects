@@ -15,7 +15,7 @@ public class FileHandler {
 		try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(outputFilename));)
 		{
 			out.writeObject(entity);
-			System.out.println("Serialization to file complete.");
+			System.out.println("Serialization to file complete.\n");
 		}
 		catch(Exception e)
 		{
