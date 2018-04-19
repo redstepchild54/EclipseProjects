@@ -37,7 +37,7 @@ public class Attribute implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Attribute [attribute=" + attribute + ", attributeMod=" + attributeMod + "]";
+		return "Attribute [attribute=" + getAttribute() + ", attributeMod=" + getAttributeMod() + "]";
 	}
 
 	

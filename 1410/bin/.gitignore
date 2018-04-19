@@ -1,12 +1,13 @@
+/assignmentA06/
+/finalProject/
+/Images/
 /ConcertLab/
 /Concert_Lab/
-/Images/
 /anagram/
 /assignmentA01/
 /assignmentA02/
 /assignmentA03/
 /assignmentA04/
-/assignmentA06/
 /assignmentA07/
 /balloonsLab/
 /collection/
@@ -18,9 +19,7 @@
 /fQ01/
 /fQ02/
 /fileLab/
-/finalProject/
 /generics/
-/gui/
 /gui_Drawing/
 /inheritenceLab/
 /interfaceLab/
@@ -28,6 +27,8 @@
 /itinerary/
 /jButton/
 /jUnit/
+/keyValuePair/
+/keyValuePairLab/
 /labBuilding/
 /layoutManagerLab/
 /midterm2/
@@ -45,3 +46,4 @@
 /stringAndStringBuilder/
 /testing/
 /wrapperClassGuiLab/
+/gui/

@@ -1,5 +1,20 @@
 package finalProject;
 
 public enum Gender {
-	MALE, FEMALE
+	MALE
+	{
+		@Override
+		public String toString()
+		{
+			return "Male";
+		}
+	}, 
+	FEMALE
+	{
+		@Override
+		public String toString()
+		{
+			return "Female";
+		}
+	}
 }

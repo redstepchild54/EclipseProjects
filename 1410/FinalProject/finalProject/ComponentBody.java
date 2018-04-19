@@ -68,7 +68,7 @@ public class ComponentBody extends Component{
 	@Override
 	public String toString() {
 		return String.format("Health: %s%nMax Health: %s%nAC: %s%nFlat Footed: %s%nTouch %s%nInitiative: %s", 
-				health, maxHealth, ac, acFlatFooted, acTouch, initiative);
+				getHealth(), getMaxHealth(), getAc(), getAcFlatFooted(), getAcTouch(), getInitiative());
 	}
 
 	public int getHealth() {

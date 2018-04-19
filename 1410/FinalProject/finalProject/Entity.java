@@ -37,6 +37,7 @@ public class Entity implements Serializable{
 				ComponentPClass cClass = new ComponentPClass(el, pClass);
 				ComponentLevel level = new ComponentLevel(el, 1);
 				ComponentXP xp = new ComponentXP(el, 0);
+				ComponentAlignment alignment = new ComponentAlignment(el);
 				
 				ComponentCharacterDescription characterDescription = null;
 				
@@ -77,6 +78,7 @@ public class Entity implements Serializable{
 				componentSet.add(xp);
 				componentSet.add(size);
 				componentSet.add(characterDescription);
+				componentSet.add(alignment);
 			default:
 				break;
 			}

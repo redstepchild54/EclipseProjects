@@ -23,6 +23,8 @@ public class ClassTester {
 		((ComponentCharacterDescription)cp).setGender(Gender.MALE);
 		((ComponentCharacterDescription)cp).setHair(Color.RED);
 		((ComponentCharacterDescription)cp).setEyes(Color.GREEN);
+		cp = entities.get(0).getComponent(ComponentAlignment.class);
+		((ComponentAlignment)cp).setAlignment(Alignment.CHAOTICGOOD);
 		
 		cp = entities.get(1).getComponent(ComponentCharacterDescription.class);
 		((ComponentCharacterDescription)cp).setCharacterName("Dominique");
@@ -30,13 +32,17 @@ public class ClassTester {
 		((ComponentCharacterDescription)cp).setGender(Gender.MALE);
 		((ComponentCharacterDescription)cp).setHair(Color.YELLOW);
 		((ComponentCharacterDescription)cp).setEyes(Color.BLACK);
+		cp = entities.get(1).getComponent(ComponentAlignment.class);
+		((ComponentAlignment)cp).setAlignment(Alignment.CHAOTICNEUTRAL);
 		
-		cp = entities.get(1).getComponent(ComponentCharacterDescription.class);
+		cp = entities.get(2).getComponent(ComponentCharacterDescription.class);
 		((ComponentCharacterDescription)cp).setCharacterName("Vaeri");
 		((ComponentCharacterDescription)cp).setPlayerName("Caroline");
 		((ComponentCharacterDescription)cp).setGender(Gender.FEMALE);
 		((ComponentCharacterDescription)cp).setHair(Color.WHITE);
 		((ComponentCharacterDescription)cp).setEyes(Color.BLUE);
+		cp = entities.get(2).getComponent(ComponentAlignment.class);
+		((ComponentAlignment)cp).setAlignment(Alignment.LAWFULNEUTRAL);
 		
 		fileHandler.writeToFile(entities.get(0), "FinalProject/finalProject/Entity.ser");
 		entities.add(fileHandler.readFromFile("FinalProject/finalProject/Entity.ser"));
@@ -71,6 +77,10 @@ public class ClassTester {
 			
 			cp = el.getComponent(ComponentXP.class);
 			System.out.println(((ComponentXP)cp).toString());
+			System.out.println();
+			
+			cp = el.getComponent(ComponentAlignment.class);
+			System.out.println(((ComponentAlignment)cp).toString());
 			System.out.println();
 			
 			cp = el.getComponent(ComponentCharacterDescription.class);
